@@ -1,0 +1,27 @@
+/* TEAM */
+	Team: Hypenotic 
+	Twitter: @hypenotic
+	Github: @hypenotic	
+	From: Toronto, Ontario, Canada
+
+	Strategy, Design + Copy: Barry A. Martin
+	Twitter: @hypenoticbam
+	Github: @barrymartin	
+	From: Toronto, Ontario, Canada
+
+	Development: Emily Dela Cruz
+	Twitter: @emdecr
+	Github: @emdecr	
+	From: Toronto, Ontario, Canada
+
+/* THANKS */
+	Resources that helped us along the way:
+		Author: Maximilian Schwarzmüller
+		Link: https://www.udemy.com/vuejs-2-the-complete-guide/learn/v4/
+
+/* SITE */
+	Last update: 2017/09
+	Language: English
+	Standards: HTML5, CSS3, ES2015/16
+	Components: Vue.js, Webpack v2
+	Software: Sublime Text, Sketch
