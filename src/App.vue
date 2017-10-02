@@ -1,6 +1,5 @@
 <template>
     <div>
-      <h2>Hello Dashboard</h2>
         <transition name="fade">
         <router-view></router-view>
     </transition>
