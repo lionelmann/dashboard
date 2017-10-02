@@ -1,23 +1,22 @@
-import Vue from 'vue';
+//Import
+import Vue from 'vue'
+import App from './App.vue'
 import VueRouter from 'vue-router';
-import axios from 'axios';
-import VueAxios from 'vue-axios';
 import { routes } from './routes';
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
 
-Vue.use(VueRouter, VueAxios, axios);
-
-// Vue.axios.defaults.headers.common['X-WP-Nonce'] = wp_api_vuejs_poc.nonce;
+// Use
+Vue.use(Buefy);
+Vue.use(VueRouter);
 
 const router = new VueRouter({
-	routes,
-	mode: 'history'
-});
-
-import App from './App.vue';
-Vue.component( 'App', App );
+	routes, // Have to pass an object where we setup the router. ES6 syntax (routes:routes)
+	mode: 'history' // Remove the hash
+})
 
 new Vue({
-	el: '#app',
-  	router,
-  	render: h => h(App)
+  router,
+  el: '#app',
+  render: h => h(App)
 })
