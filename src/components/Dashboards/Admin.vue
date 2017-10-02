@@ -28,7 +28,7 @@
 
 <script>
 	import axios from 'axios';
-	import Footer from './Shared/Footer.vue';
+	import Footer from '../Shared/Footer.vue';
 	export default {
 		data() {
 			return {
