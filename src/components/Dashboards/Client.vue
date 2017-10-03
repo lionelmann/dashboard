@@ -12,18 +12,21 @@
 				</div>
 			</div>
 		</section>
+		<!--<hype-basecamp></hype-basecamp>-->
 		<hype-breeze></hype-breeze>
 		<hype-footer></hype-footer>
+
 	</div>
 </template>
 
 <script>
 	import Breeze from '../Dashboards/Boards/Breeze.vue';
-	import Footer from '../Shared/Footer.vue';
+	//import Basecamp from '../Dashboards/Boards/Basecamp.vue';
+	
 	export default {
 		components: {
-			'hype-footer': Footer,
 			'hype-breeze': Breeze,
+			//'hype-basecamp': Basecamp,
 		}
 	};
 </script>

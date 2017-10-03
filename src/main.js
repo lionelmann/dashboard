@@ -5,6 +5,12 @@ import VueRouter from 'vue-router'
 import { routes } from './routes'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
+import Footer from './components/Shared/Footer.vue'
+import AdminSideNav from './components/Shared/AdminSideNav.vue'
+
+// Register global components 
+Vue.component('hype-footer', Footer) // Register globally
+Vue.component('hype-admin-sidenav', AdminSideNav) // Register globally
 
 // Use
 Vue.use(Buefy);

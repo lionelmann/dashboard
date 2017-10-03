@@ -22,7 +22,7 @@
 			}
 		},
 		created() {
-			axios.get('https://api.breeze.pm/projects.json?api_token=ymzzTy1nnymU7HiyHgPV')
+			//axios.get('https://launchpad.37signals.com/authorization/new?type=web_server&client_id=78bc53090c3a45c3c01cdc9dc06a2d7fba9dd2df&redirect_uri=https://hypelabs.ca')
         	.then(response => {
 				// JSON responses are automatically parsed.
 				this.posts = response.data;

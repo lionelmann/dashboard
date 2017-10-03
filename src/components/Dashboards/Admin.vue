@@ -1,30 +1,32 @@
 <template>
 	<div>
-		<section class="hero is-primary">
+		<section class="hero is-success">
 			<div class="hero-body">
 				<div class="container">
 				<h1 class="title">
-					Client Weekly Dashboard
+					Hypenotic Admin Dashboard
 				</h1>
 				<h2 class="subtitle">
-					Weekly Progress
+					Client configuration and summary
 				</h2>
 				</div>
 			</div>
 		</section>
-		<hype-breeze></hype-breeze>
+		
+		<div class="columns" style="margin: 0;">
+			<hype-admin-sidenav></hype-admin-sidenav>
+			<div class="column">
+				<p>Auto</p>
+			</div>
+		</div>
+		
 		<hype-footer></hype-footer>
 	</div>
 </template>
 
 <script>
-	import Breeze from '../Dashboards/Boards/Breeze.vue';
-	import Footer from '../Shared/Footer.vue';
 	export default {
-		components: {
-			'hype-footer': Footer,
-			'hype-breeze': Breeze,
-		}
+		
 	};
 </script>
 
