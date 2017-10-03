@@ -1,4 +1,6 @@
 <template>
+<section>
+<div class="container">
 <div class="columns">
   	<div class="column is-two-thirds">  
     	<h1 class="is-size-1 vcenter has-text-centered">Welcome to the Dashboard</h1>
@@ -30,6 +32,8 @@
 		</div>
   	</div>
 </div>
+</div>
+</section>
 </template>
 
 <script>
@@ -37,11 +41,13 @@
 
 <style scoped>
 
+section {
+	background-color: #7957d5;
+	color: white;
+}
 .columns {
 	height: 100vh;
 	margin: 0;
-	color: white;
-	background-color: #7957d5;
 }
 
 .vcenter {
