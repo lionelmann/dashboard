@@ -20,8 +20,8 @@
 </template>
 
 <script>
-	import Breeze from '../Dashboards/Boards/Breeze.vue';
-	//import Basecamp from '../Dashboards/Boards/Basecamp.vue';
+	import Breeze from '../Dashboards/Breeze.vue';
+	//import Basecamp from '../Dashboards/Basecamp.vue';
 	
 	export default {
 		components: {
