@@ -1,10 +1,10 @@
 <template>
 	<div>
-		<hype-admin-header></hype-admin-header>
+		<hype-header></hype-header>
 		<div class="columns" style="margin: 0;">
-			<hype-admin-sidenav></hype-admin-sidenav>
+			<hype-sidenav></hype-sidenav>
 			<div class="column">
-				<p>Auto</p>
+				<hype-breeze></hype-breeze>
 			</div>
 		</div>
 		<hype-footer></hype-footer>
@@ -12,12 +12,14 @@
 </template>
 
 <script>
-	import AdminSideNav from './SideNav.vue'
-	import Header from './Header.vue'
+	import Breeze from '../Dashboards/Breeze.vue';
+	import AdminSideNav from './SideNav.vue';
+	import Header from './Header.vue';
 	export default {
 		components: {
-			'hype-admin-sidenav': AdminSideNav,
-			'hype-admin-header': Header,
+			'hype-sidenav': AdminSideNav,
+			'hype-header': Header,
+			'hype-breeze': Breeze,
 		}
 	};
 </script>

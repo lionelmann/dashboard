@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<hype-admin-header></hype-admin-header>
+		<hype-header></hype-header>
 		<div class="columns" style="margin: 0;">
-			<hype-admin-sidenav></hype-admin-sidenav>
+			<hype-sidenav></hype-sidenav>
 			<div class="column">
                 <div class="field">
                 <label class="label">Client Name</label>
@@ -100,8 +100,8 @@
 	import Header from './Header.vue'
 	export default {
         components: {
-			'hype-admin-sidenav': AdminSideNav,
-			'hype-admin-header': Header,
+			'hype-sidenav': AdminSideNav,
+			'hype-header': Header,
 		}
 	};
 </script>
