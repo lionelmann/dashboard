@@ -1,18 +1,6 @@
 <template>
 	<div>
-		<section class="hero is-success">
-			<div class="hero-body">
-				<div class="container">
-				<h1 class="title">
-					Hypenotic Admin Dashboard
-				</h1>
-				<h2 class="subtitle">
-					Client configuration
-				</h2>
-				</div>
-			</div>
-		</section>
-		
+		<hype-admin-header></hype-admin-header>
 		<div class="columns" style="margin: 0;">
 			<hype-admin-sidenav></hype-admin-sidenav>
 			<div class="column">
@@ -108,8 +96,13 @@
                 </template>
 
 <script>
+    import AdminSideNav from './SideNav.vue'
+	import Header from './Header.vue'
 	export default {
-		
+        components: {
+			'hype-admin-sidenav': AdminSideNav,
+			'hype-admin-header': Header,
+		}
 	};
 </script>
 
