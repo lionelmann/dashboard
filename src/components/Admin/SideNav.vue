@@ -5,16 +5,17 @@
                 <li><router-link to="/admin/farmlink" style="color: white;">Farmlink</router-link></li>
                 <li><router-link to="/admin/parkpeople" style="color: white;">Park People</router-link></li>
                 <li><router-link to="/admin/lgo" style="color: white;"> LGO</router-link></li>
-                <li><router-link to="/config" style="color: white;"> <i class="fa fa-plus" aria-hidden="true"></i> Add Client</router-link></li>
+                <li><router-link to="/config" style="color: white;"> <i class="fa fa-plus" aria-hidden="true"></i> Add New Client</router-link></li>
+
             </ul>
         </aside>
     </div>
 </template>
 
 <script>
-export default {
-  
-}
+    export default {
+    
+    }
 </script>
 
 <style lang="sass" scoped>
