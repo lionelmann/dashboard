@@ -1,7 +1,5 @@
 <template>
 	<div>
-
-        <router-link to="/admin/farmlink">Farmlink</router-link>
 		<hype-header></hype-header>
 		<div class="columns" style="margin: 0;">
 			<hype-sidenav></hype-sidenav>
