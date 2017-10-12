@@ -10,7 +10,19 @@
                 <div class="field">
                     <label class="label">Client Name</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Text input" v-model="newClient">
+                        <input class="input" type="text" placeholder="Client Name" v-model="newClient">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Breeze Project ID</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="ID">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Github Repository Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Repository">
                     </div>
                 </div>
                 <div class="field is-grouped">

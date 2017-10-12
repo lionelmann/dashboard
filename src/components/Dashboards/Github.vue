@@ -4,7 +4,7 @@
     		<div class="container">
 				<div class="columns">
 					<div class="column is-one-half">
-						<div v-for="post in posts"><b>Project Name:</b> {{post.name}}</div>
+						<div v-for="post in posts"><b>Repo Name:</b> {{post.name}}</div>
 					</div>
   					<div class="column"></div>
 				</div>
@@ -22,7 +22,7 @@
 			}
 		},
 		created() {
-			axios.get('https://api.breeze.pm/projects.json?api_token=ymzzTy1nnymU7HiyHgPV')
+			axios.get('https://api.github.com/users/hypenotic/repos')
         	.then(response => {
 				// JSON responses are automatically parsed.
 				this.posts = response.data;
