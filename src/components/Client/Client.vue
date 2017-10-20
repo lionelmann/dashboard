@@ -8,7 +8,7 @@
 
 <script>
 	import Header from './Header.vue'
-	import Breeze from '../Dashboards/Breeze.vue';
+	import Breeze from '../Dashboards/Breeze/Breeze.vue';
 	export default {
 		components: {
 			'hype-breeze': Breeze,
