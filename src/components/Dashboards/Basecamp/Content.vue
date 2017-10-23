@@ -26,6 +26,7 @@
 			let clientID = '78bc53090c3a45c3c01cdc9dc06a2d7fba9dd2df';
 			let clientSecret = '6c5f053edf21ee4fbce05c4a44cf6fac4ed94060';
 			let redirectURI = 'http://myapp.com/oauth';
+			
 			axios.get('https://basecamp.com/1759522/api/v1/projects/11821772/messages/68207286.json',
 			{
 				auth: {
