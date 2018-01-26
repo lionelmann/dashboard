@@ -3,65 +3,37 @@
 		<hype-header></hype-header>
 		<div class="container">
 
-
-<div class="columns is-multiline is-centered">
-  <div class="column">
-    <p class="is-info">
-      <code class="html">is-narrow</code><br>
-      First Column
-    </p>
-  </div>
-  <div class="column">
-    <p class="is-success">
-      <code class="html">is-narrow</code><br>
-      Our Second Column
-    </p>
-  </div>
-  <div class="column">
-    <p class="is-danger">
-      <code class="html">is-narrow</code><br>
-      Third Column
-    </p>
-  </div>
-  <div class="column">
-    <p class="is-info">
-      <code class="html">is-narrow</code><br>
-      The Fourth Column
-    </p>
-  </div>
-  <div class="column">
-    <p class="is-success">
-      <code class="html">is-narrow</code><br>
-      Fifth Column
-    </p>
-  </div>
-   <div class="column">
-    <p class="is-success">
-      <code class="html">is-narrow</code><br>
-      Fifth Column
-    </p>
-  </div>
-   <div class="column">
-    <p class="is-success">
-      <code class="html">is-narrow</code><br>
-      Fifth Column
-    </p>
-  </div>
-  
-</div>
-</div>
-
-
-		<div class="columns" style="margin: 0;">
-			<div class="column">
-				<button class="button is-primary is-medium" @click="isComponentModalActive = true">
-                <i class="fas fa-plus-circle"></i>
-            </button>
-
-            <b-modal :active.sync="isComponentModalActive" has-modal-card>
-                <modal-form v-bind="formProps"></modal-form>
-            </b-modal>
+			<!-- BUTTON and FORM FIELD -->
+			<div class="item">
+				 <div class="field">
+                    <label class="label">Client Name</label>
+                    <div class="control">
+                        <input class="input" require type="text" placeholder="Client Name" v-model="clientName">
+						<br>
+						<input class="input" type="text" placeholder="Description" v-model="clientDesc">
+                    </div>
+                </div>
+				<button class="button is-primary" @click="addClient">Add Client</button>
 			</div>
+
+			<!-- CARD -->
+			<div class="card" v-for="client in clients">
+				<header class="card-header">
+					<p class="card-header-title">Client: {{client.name}}</p>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						{{client.desc}}
+						<br>
+						<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<a href="#" class="card-footer-item">Edit</a>
+					<a href="#" class="card-footer-item" @click="removeClient(client)" >Delete</a>
+				</footer>
+			</div>
+			
 		</div>
 		<hype-footer></hype-footer>
 	</div>
@@ -69,24 +41,54 @@
 
 
 <script>
-	import ClientSetup from './ClientSetup.vue'
 	import Header from './Header.vue';
 	export default {
 		components: {
 			'hype-header': Header,
-			ClientSetup
 		},
 		data() {
             return {
-                isComponentModalActive: false,
-                formProps: {
-                    email: 'evan@you.com',
-                    password: 'testing'
-                }
+				clientName: '',
+				clientDesc: '',
+                clients: []
             }
+		},
+		methods: {
+            addClient() {
+				if(this.clientName != '' && this.clientDesc != '') {
+					this.clients.push({
+						name: this.clientName,
+						desc: this.clientDesc
+						}); 
+					this.clientName = '';
+					this.clientDesc = '';
+					console.log(this.clients)
+				}
+            },
+            removeClient(client) {
+				let i = this.clients.indexOf(client);
+				if(i != -1) {
+					this.clients.splice(i, 1);
+				}
+		    },
         }
 	};
 </script>
 
 <style scoped>
+
+.container {
+	margin: 20px auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 20px;
+}
+
+button {
+	height: 100px;
+	width: 80px;
+}
+
+
+
 </style>
