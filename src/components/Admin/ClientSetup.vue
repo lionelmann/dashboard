@@ -40,7 +40,6 @@
 </template>
 
 <script>
-    import AdminSideNav from './SideNav.vue'
 	import Header from './Header.vue'
 	export default {
         data() {
@@ -50,7 +49,6 @@
             }
         },
         components: {
-			'hype-sidenav': AdminSideNav,
 			'hype-header': Header,
 		},
         methods: {
