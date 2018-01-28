@@ -16,7 +16,7 @@
                 </div>
 				-->
 			<b-tooltip label="Add New Client" position="is-bottom">
-				<button class="button is-primary" @click="addClient"><i class="fas fa-plus"></i></button>
+				<button class="button is-primary" @click="addClient"><i class="fas fa-plus fa-3x"></i></button>
 			</b-tooltip>
 			</div>
 
@@ -66,8 +66,14 @@
             return {
 				clientName: '',
 				clientDesc: '',
-				clients: [{name: 'Farmlink', desc: 'adfadfa'}, {name: 'Farmlink', desc: 'adfadfa'},
-				{name: 'Farmlink', desc: 'adfadfa'}, {name: 'Farmlink', desc: 'adfadfa'}],
+				clients: [
+					{name: 'Farmlink', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}, 
+					{name: 'Fiesta Farms', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+					{name: 'LGO', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}, 
+					{name: 'Ingenuity', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+					{name: 'Hypenotic', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}, 
+					{name: 'Park People', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+					{name: 'OneGrid', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}],
             }
 		},
 		methods: {
@@ -97,7 +103,7 @@
 .container {
 	margin: 20px auto;
 	display: grid;
-	grid-template-columns: 200px 1fr;
+	grid-template-columns: 100px 1fr;
 	grid-template-areas: "sidebar content" "sidebar .";
 	grid-gap: 20px;
 }
