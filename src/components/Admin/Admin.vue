@@ -5,6 +5,7 @@
 
 			<!-- BUTTON and FORM FIELD -->
 			<div class="sidebar">
+				<!--
 				 <div class="field">
                     <label class="label">Client Name</label>
                     <div class="control">
@@ -13,6 +14,7 @@
 						<textarea class="input" type="text" placeholder="Description" v-model="clientDesc"></textarea>
                     </div>
                 </div>
+				-->
 			<b-tooltip label="Add New Client" position="is-bottom">
 				<button class="button is-primary" @click="addClient"><i class="fas fa-plus"></i></button>
 			</b-tooltip>
@@ -34,15 +36,15 @@
 				<footer class="card-footer">
 					
 					<a href="#" class="card-footer-item">
-						<b-tooltip :label="'Add New Project to ' + client.name" position="is-left" multilined size="is-small"><i class="fas fa-plus-circle"></i></b-tooltip>
+						<b-tooltip :label="'View ' + client.name + '\'s Projects'" position="is-top"><i class="fas fa-eye"></i></b-tooltip>
 					</a>
 					
 					<a href="#" class="card-footer-item">
-						<b-tooltip :label="'Edit ' + client.name + ' Settings'" position="is-top"><i class="fas fa-pencil-alt"></i></b-tooltip>
+						<b-tooltip :label="'Edit ' + client.name + '\'s Settings'" position="is-top"><i class="fas fa-pencil-alt"></i></b-tooltip>
 					</a>
 
 					<a href="#" class="card-footer-item" @click="removeClient(client)" >
-						<b-tooltip :label="'Delete ' + client.name" position="is-right"><i class="far fa-trash-alt"></i></b-tooltip>
+						<b-tooltip :label="'Archive ' + client.name + ' and all Projects'" position="is-top"><i class="fas fa-archive"></i></b-tooltip>
 					</a>
 				</footer>
 			</div>
@@ -64,7 +66,8 @@
             return {
 				clientName: '',
 				clientDesc: '',
-				clients: [],
+				clients: [{name: 'Farmlink', desc: 'adfadfa'}, {name: 'Farmlink', desc: 'adfadfa'},
+				{name: 'Farmlink', desc: 'adfadfa'}, {name: 'Farmlink', desc: 'adfadfa'}],
             }
 		},
 		methods: {
