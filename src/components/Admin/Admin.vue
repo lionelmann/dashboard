@@ -43,8 +43,8 @@
 						<b-tooltip :label="'Edit ' + client.name + '\'s Settings'" position="is-top"><i class="fas fa-pencil-alt"></i></b-tooltip>
 					</a>
 
-					<a href="#" class="card-footer-item" @click="removeClient(client)" >
-						<b-tooltip :label="'Archive ' + client.name + ' and all Projects'" position="is-top"><i class="fas fa-archive"></i></b-tooltip>
+					<a href="#" class="card-footer-item" @click="removeClient(client); success(client.name);">
+						<b-tooltip :label="'Archive ' + client.name + ' and all Projects'" position="is-top" ><i class="fas fa-archive"></i></b-tooltip>
 					</a>
 				</footer>
 			</div>
@@ -94,6 +94,13 @@
 					this.clients.splice(i, 1);
 				}
 			},
+			success(client) {
+                this.$toast.open({
+                    message: client + ' archived successfully!',
+					type: 'is-success',
+					duration: 2000,
+                })
+            },
         }
 	};
 </script>
