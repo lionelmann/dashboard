@@ -1,18 +1,19 @@
 <template>
 	<div>
-		<section class="hero is-primary">
+		<!--<section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
             <h1 class="title">
                 Project Setup Dashboard
             </h1>
             <h2 class="subtitle">
-                Project configuration and summary {{ counter }}
+                Project configuration and summary {{ doubleCounter }} {{ stringCounter }}
 				{{name}}
             </h2>
             </div>
         </div>
-    </section>
+    </section>-->
+	<hype-header></hype-header>
 		<div class="wrapper">
 
 			<!-- BUTTON and FORM FIELD -->
@@ -51,7 +52,7 @@
 						<b-tooltip label="Edit Project" position="is-top"><i class="fas fa-pencil-alt"></i></b-tooltip>
 					</a>
 
-					<a href="#" class="card-footer-item" @click="removeClient(client); success(project.name);">
+					<a href="#" class="card-footer-item" @click="removeProject(project); success(project.name);">
 						<b-tooltip label="Archive Project" position="is-top" ><i class="fas fa-archive"></i></b-tooltip>
 					</a>
 
@@ -70,6 +71,8 @@
 
 <script>
 	import Header from './Header.vue';
+	import {mapGetters} from 'vuex';
+	import { mapActions } from 'vuex';
 	export default {
 		components: {
 			'hype-header': Header,
@@ -84,11 +87,23 @@
 		},
 		// TESTING STORE
 		computed: {
+			...mapGetters([
+				'doubleCounter',
+				'stringCounter'
+			])
+		},
+		/*computed: {
 			counter() {
 				return this.$store.getters.doubleCounter;
+			},
+			clicks() {
+				return this.$store.getters.stringCounter;
 			}
-		},
+		},*/
 		methods: {
+			...mapActions([
+				'removeProject'
+			]),
             addClient() {
 				if(this.clientName != '' && this.clientDesc != '') {
 					this.clients.unshift({
@@ -100,12 +115,6 @@
 					//console.log(this.clients)
 				}
             },
-            removeClient(client, e) {
-				let i = this.clients.indexOf(client);
-				if(i != -1) {
-					this.clients.splice(i, 1);
-				}
-			},
 			success(project) {
                 this.$toast.open({
                     message: project + ' archived successfully!',

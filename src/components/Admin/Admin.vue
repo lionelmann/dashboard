@@ -1,21 +1,10 @@
 <template>
 	<div>
-		<section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-            <h1 class="title">
-                Client Setup Dashboard
-            </h1>
-            <h2 class="subtitle">
-                Client configuration and summary
-            </h2>
-            </div>
-        </div>
-    </section>
+		<hype-header></hype-header>
 		<div class="wrapper">
 			<!-- BUTTON and FORM FIELD -->
 			<div class="sidebar">
-				<!--
+				
 				 <div class="field">
                     <label class="label">Client Name</label>
                     <div class="control">
@@ -24,7 +13,7 @@
 						<textarea class="input" type="text" placeholder="Description" v-model="clientDesc"></textarea>
                     </div>
                 </div>
-				-->
+				
 				<b-tooltip label="Add New Client" position="is-bottom">
 					<button class="button is-primary" @click="addClient"><i class="fas fa-plus fa-3x"></i></button>
 				</b-tooltip>
@@ -69,6 +58,7 @@
 
 <script>
 	import Header from './Header.vue';
+	import { mapActions } from 'vuex';
 	export default {
 		components: {
 			'hype-header': Header,
@@ -81,6 +71,9 @@
             }
 		},
 		methods: {
+			...mapActions([
+				'removeClient'
+			]),
             addClient() {
 				if(this.clientName != '' && this.clientDesc != '') {
 					this.clients.unshift({
@@ -90,12 +83,6 @@
 					this.clientName = '';
 					this.clientDesc = '';
 					//console.log(this.clients)
-				}
-            },
-            removeClient(client) {
-				let i = this.clients.indexOf(client);
-				if(i != -1) {
-					this.clients.splice(i, 1);
 				}
 			},
 			success(client) {

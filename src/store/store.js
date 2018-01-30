@@ -26,6 +26,32 @@ export const store = new Vuex.Store({ // export a constant named 'store'
     getters: {
         doubleCounter: state => {
             return state.counter * 2;
+        },
+        stringCounter: state => {
+            return state.counter + "clicks"
         }
+    },
+    mutations: {
+        removeClient: (state, payload) => {
+            let i = state.clients.indexOf(payload);
+            if(i != -1) {
+                state.clients.splice(i, 1);
+            }
+        },
+        removeProject: (state, payload) => {
+            let i = state.projects.indexOf(payload);
+            if(i != -1) {
+                state.projects.splice(i, 1);
+            }
+        },
+    },
+    actions: {
+        removeClient: ({ commit }, payload) => {
+            commit('removeClient', payload)
+        },
+        removeProject: ({ commit }, payload) => {
+            commit('removeProject', payload)
+        }
+
     }
 });
