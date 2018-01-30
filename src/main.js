@@ -6,6 +6,7 @@ import { routes } from './routes'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
 import Footer from './components/Shared/Footer.vue'
+import { store } from './store/store.js'
 
 // Register global components 
 Vue.component('hype-footer', Footer) // Register globally
@@ -23,7 +24,8 @@ const router = new VueRouter({
 })
 
 new Vue({
-  router,
   el: '#app',
+  router,
+  store,
   render: h => h(App)
 })

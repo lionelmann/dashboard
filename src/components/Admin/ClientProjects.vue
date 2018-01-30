@@ -7,7 +7,8 @@
                 Project Setup Dashboard
             </h1>
             <h2 class="subtitle">
-                Project configuration and summary
+                Project configuration and summary {{ counter }}
+				{{name}}
             </h2>
             </div>
         </div>
@@ -33,13 +34,13 @@
 
 			<!-- CARD -->
 			<div class="cards">
-			<div class="card" v-for="client in clients">
+			<div class="card" v-for="project in projects">
 				<header class="card-header">
-					<p class="card-header-title">{{ client.project }}</p>
+					<p class="card-header-title">{{ project.name }}</p>
 				</header>
 				<div class="card-content">
 					<div class="content">
-						{{client.desc}}
+						{{project.desc}}
 						<br>
 						<time datetime="2016-1-1">Last Updated: Jan 27, 2018 </time>
 					</div>
@@ -50,7 +51,7 @@
 						<b-tooltip label="Edit Project" position="is-top"><i class="fas fa-pencil-alt"></i></b-tooltip>
 					</a>
 
-					<a href="#" class="card-footer-item" @click="removeClient(client); success(client.project);">
+					<a href="#" class="card-footer-item" @click="removeClient(client); success(project.name);">
 						<b-tooltip label="Archive Project" position="is-top" ><i class="fas fa-archive"></i></b-tooltip>
 					</a>
 
@@ -75,17 +76,17 @@
 		},
 		data() {
             return {
+				name: this.$store.state.name,
 				clientName: '',
 				clientDesc: '',
-				clients: [
-					{project: 'Project #1', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-					{project: 'Project #2', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}, 
-					{project: 'Project #3', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}, 
-					{project: 'Project #4', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}, 
-				]
-
-					
+				projects: this.$store.state.projects,
             }
+		},
+		// TESTING STORE
+		computed: {
+			counter() {
+				return this.$store.getters.doubleCounter;
+			}
 		},
 		methods: {
             addClient() {
@@ -112,7 +113,7 @@
 					duration: 2000,
 				})
 				
-            },
+			},
         }
 	};
 </script>
